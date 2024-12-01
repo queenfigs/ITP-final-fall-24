@@ -6,4 +6,18 @@
 def main():
   print("Welcome to the Task Manager Application!")
 
+def menu():
+  items = ["Add Task", "Mark Tasks as Complete", "View Tasks", "Delete Task", "Filter Tasks", "Exit"]
+  print("1. Add Task")
+
+
+
+
+
+
+
+
+
+
+
 main()
