@@ -64,12 +64,23 @@ def deleteTask():
  
 # 5. View tasks filtered by completion status
 def filterTasks():
-  print("filter")
-    
-
-
-
-
+  print(f"{RED}Filter by:")
+  print(f"{RED}1{GREEN}. Complete tasks")
+  print(f"{RED}2{GREEN}. Incomplete tasks")
+  
+  choice = input(f"\n{RED}Enter your choice: {GREEN}")
+  choice = int(choice)
+  counter = 1
+  for task in tasks:
+    if (task.completed and choice == 1) or (not task.completed and choice == 2):
+      print(f"{RED}{counter}{GREEN}. {task.description}")
+      counter += 1
+  if counter == 1:
+    if choice == 1: 
+      word = "complete"
+    else:
+      word = "incomplete"
+    print(f"{BLUE}No {GREEN}{word} tasks found.\n")
 
 # main loop
 print(f"{GREEN}Welcome to the Task Manager Application!\n")
