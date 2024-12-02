@@ -17,9 +17,18 @@ def menu():
     print(f"{RED}{counter}. {GREEN}{item}")
     counter += 1
 
+# Task class - holds description and completion status of a task
+class Task:
+  def __init__(self, description):
+    self.description = description
+    self.completed = False
+  def complete(self):
+    self.completed = True
+
 def addTask():
-  print("add task")
-  
+  description = input(f"\n{RED}Enter task description: {GREEN}")
+  print(f"{GREEN}Task added successfully!")
+ 
 def completeTask():
   print("completeTask")
   
