@@ -25,15 +25,22 @@ class Task:
   def complete(self):
     self.completed = True
 
+# List of tasks - pre-populated with three demo tasks
+tasks = [Task("Buy groceries"), Task("Do laundry"), Task("Clean the house")]
+
 def addTask():
   description = input(f"\n{RED}Enter task description: {GREEN}")
+  tasks.append(Task(description))
   print(f"{GREEN}Task added successfully!")
  
 def completeTask():
   print("completeTask")
   
 def viewTasks():
-  print("lookem")
+  counter = 1
+  for task in tasks:
+    print(f"{RED}{counter}. {GREEN}{task.description}")
+    counter += 1
   
 def deleteTask():
   print("del")
