@@ -28,23 +28,37 @@ class Task:
 # List of tasks - pre-populated with three demo tasks
 tasks = [Task("Buy groceries"), Task("Do laundry"), Task("Clean the house")]
 
+# Functions to implement the six menu choices
+
+# 1. Add a task to the list
 def addTask():
   description = input(f"\n{RED}Enter task description: {GREEN}")
   tasks.append(Task(description))
   print(f"{GREEN}Task added successfully!")
  
+# 2. Mark task as complete.
 def completeTask():
-  print("completeTask")
+  taskNumber = input(f"\n{RED}Enter task number to mark as complete: {GREEN}")
+  taskNumber = int(taskNumber)
+  tasks[taskNumber - 1].complete()
   
+  print(f"{GREEN}Task {taskNumber} marked as complete!\n")
+
+# 3. View all tasks
 def viewTasks():
   counter = 1
   for task in tasks:
     print(f"{RED}{counter}. {GREEN}{task.description}")
     counter += 1
-  
+
+# 4. Delete a task
 def deleteTask():
-  print("del")
-  
+  taskNumber = input(f"\n{RED}Enter task number to delete: {GREEN}")
+  taskNumber = int(taskNumber)
+  del tasks[taskNumber - 1]
+  print(f"{GREEN}Task {taskNumber} deleted successfully!\n") 
+ 
+# 5. View tasks filtered by completion status
 def filterTasks():
   print("filter")
     
