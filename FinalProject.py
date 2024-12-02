@@ -48,7 +48,11 @@ def completeTask():
 def viewTasks():
   counter = 1
   for task in tasks:
-    print(f"{RED}{counter}. {GREEN}{task.description}")
+    if (task.completed):
+      completedOrNot = f"{WHITE}[{GREEN}Complete{WHITE}] "
+    else:
+      completedOrNot = ""
+    print(f"{RED}{counter}. {completedOrNot}{GREEN}{task.description}")
     counter += 1
 
 # 4. Delete a task
